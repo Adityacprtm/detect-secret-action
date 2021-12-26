@@ -1,0 +1,13 @@
+name: "Secret Scanning with detect-secrets"
+description: "Scan Secret Repository with detect-secret"
+author: "Adityacprtm"
+inputs:
+  baseline_file:
+    description: "detect-secrets baseline file"
+    required: false
+    default: "./.secrets.baseline"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.baseline_file }}
